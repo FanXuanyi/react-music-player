@@ -67,7 +67,7 @@ class Player extends Component {
                     </div>
                 </div>
                 <div className="music-pic">
-                    <img src="http://placehold.it/180x180" alt=""/>
+                    <img src="http://placehold.it/180x180" alt="歌曲图片"/>
                 </div>
             </div>
         );

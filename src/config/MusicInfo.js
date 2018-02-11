@@ -1,7 +1,7 @@
 /**
  * Created by FXY on 2018/2/11.
  */
-export const MUSIC_LIST = [
+export const MUSIC_INFO = [
     {
         id: 1,
         title: '天使中的魔鬼',

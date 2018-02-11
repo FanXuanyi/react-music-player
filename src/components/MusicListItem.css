@@ -1,0 +1,51 @@
+.components-musicListItem {
+    list-style: none;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid #ddd;
+    text-indent: 10px;
+    cursor: pointer;
+}
+
+.components-musicListItem:hover {
+    background: #eee;
+}
+
+.delete {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    top: -50px;
+    position: relative;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    right: -95%;
+}
+
+.delete:before, .delete:after {
+    content: '';
+    display: block;
+    background: #666;
+    position: absolute;
+}
+
+.delete:before {
+    width: 100%;
+    height: 1px;
+    top: 14px;
+    left: 0;
+}
+
+.delete:after {
+    height: 100%;
+    width: 1px;
+    left: 15px;
+    top: 0;
+}
+
+.focus {
+    color: #2f9842;
+}

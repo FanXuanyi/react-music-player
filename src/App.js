@@ -4,14 +4,16 @@ import Header from "./components/Header";
 import $ from 'jquery';
 import 'jplayer';
 import Player from "./page/Player";
-import { MUSIC_LIST } from './config/MusicList';
+import { MUSIC_INFO } from './config/MusicInfo';
+import MusicList from './page/MusicList';
 
 class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            currentMusicItem: MUSIC_LIST[0]
+            currentMusicItem: MUSIC_INFO[0],
+            musicList: MUSIC_INFO
         };
     }
 
@@ -32,6 +34,7 @@ class App extends Component {
         return (
             <div>
                 <Header/>
+                <MusicList {...this.state}/>
                 <Player currentMusicItem={this.state.currentMusicItem}/>
             </div>
         );

@@ -4,16 +4,15 @@ import Header from "./components/Header";
 import $ from 'jquery';
 import 'jplayer';
 import Player from "./page/Player";
+import { MUSIC_LIST } from './config/MusicList';
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        //     progress: 0,//初始状态
-        //     duration: 0,//音频总时间
-        //     barColor: '#2f9842'//进度条颜色
-        // };
+        this.state = {
+            currentMusicItem: MUSIC_LIST[0]
+        };
     }
 
     componentDidMount() {
@@ -33,7 +32,7 @@ class App extends Component {
         return (
             <div>
                 <Header/>
-                <Player/>
+                <Player currentMusicItem={this.state.currentMusicItem}/>
             </div>
         );
   }

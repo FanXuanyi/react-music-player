@@ -6,6 +6,7 @@ import $ from 'jquery';
 import 'jplayer';
 import './Player.css';
 import Progress from "../components/Progress";
+import 'font-awesome/css/font-awesome.css';
 
 class Player extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Player extends Component {
     }
 
     componentDidMount() {
+        // 时间更新
         $('#player').bind($.jPlayer.event.timeupdate, (e) => {
             this.setState({
                 progress: e.jPlayer.status.currentPercentAbsolute,
@@ -38,36 +40,35 @@ class Player extends Component {
     render() {
         return (
             <div className="player-page">
-                <h1 className="caption">我的私人音乐坊&gt;</h1>
-                <div>
+                <h1 className="player-caption">我的私人音乐坊&nbsp;&gt;</h1>
+                <div className="player-info">
+                    <h2 className="music-title">歌曲名称</h2>
+                    <h3 className="music-artist">歌手</h3>
                     <div>
-                        <h2 className="music-title">歌曲名称</h2>
-                        <h3 className="music-artist">歌手</h3>
-                        <div>
-                            <div className="left-time"></div>
-                            <div className="volume-container">
-                                <i></i>
-                                <div className="volume-wrapper">音量控制部分</div>
-                            </div>
-                        </div>
-                        <div style={{height: 10, lineHeight: '10px'}}>播放进度</div>
-                        <div className="mt35">
-                            <div>
-                                <i className="icon"></i>
-                                <i className="icon"></i>
-                                <i className="icon ml20"></i>
-                            </div>
-                            <div>
-                                <i className="icon"></i>
-                            </div>
+                        <div className="left-time">-2:00</div>
+                        <div className="volume-controller">
+                            <i className="fa fa-fw fa-volume-up"></i>
+                            <div className="volume-wrapper">音量控制部分</div>
                         </div>
                     </div>
-                    <div>
-                        <img src="" alt=""/>
+                    <div className="play-progress">
+                        <div id="player"></div>
+                        <Progress {...this.state} onProgressChange={this.progressChangeHandler.bind(this)}/>
+                    </div>
+                    <div className="play-controller">
+                        <span className="play-button">
+                            <i className="fa fa-fw fa-2x fa-chevron-left"></i>
+                            <i className="fa fa-fw fa-2x fa-play"></i>
+                            <i className="fa fa-fw fa-2x fa-chevron-right"></i>
+                        </span>
+                        <span className="play-mode">
+                            <i className="fa fa-fw fa-2x fa-refresh"></i>
+                        </span>
                     </div>
                 </div>
-                <div id="player"></div>
-                <Progress {...this.state} onProgressChange={this.progressChangeHandler.bind(this)}/>
+                <div className="music-pic">
+                    <img src="http://placehold.it/180x180" alt=""/>
+                </div>
             </div>
         );
     }

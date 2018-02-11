@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "jplayer": "^2.9.2",
     "jquery": "^3.3.1",
     "react": "^16.2.0",

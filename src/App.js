@@ -17,6 +17,7 @@ class App extends Component {
     }
 
     componentDidMount() {
+        // 音乐播放
         $('#player').jPlayer({
             ready: function () {
                 $(this).jPlayer('setMedia', {

@@ -8,6 +8,7 @@ import './Player.css';
 import Progress from "../components/Progress";
 import 'font-awesome/css/font-awesome.css';
 import { Link } from 'react-router-dom';
+import Pubsub from 'pubsub-js';
 
 class Player extends Component {
     constructor(props) {
@@ -46,6 +47,7 @@ class Player extends Component {
         $('#player').jPlayer('volume', progress);
     }
 
+    // 播放/暂停
     play() {
         if (this.state.isPlay) {
             $('#player').jPlayer('pause');
@@ -55,6 +57,16 @@ class Player extends Component {
         this.setState({
             isPlay: !this.state.isPlay
         });
+    }
+
+    // 播放上一首
+    playPrev() {
+        Pubsub.publish('PLAY_PREV');
+    }
+
+    // 播放下一首
+    playNext() {
+        Pubsub.publish('PLAY_NEXT');
     }
 
     render() {
@@ -76,14 +88,13 @@ class Player extends Component {
                         </div>
                     </div>
                     <div className="play-progress">
-                        <div id="player"></div>
                         <Progress {...this.state} onProgressChange={this.progressChangeHandler.bind(this)}/>
                     </div>
                     <div className="play-controller">
                         <span className="play-button">
-                            <i className="fa fa-fw fa-2x fa-chevron-left"></i>
+                            <i className="fa fa-fw fa-2x fa-chevron-left" onClick={this.playPrev.bind(this)}></i>
                             <i className={`fa fa-fw fa-2x ${this.state.isPlay ? 'fa-pause' : 'fa-play'}`} onClick={this.play.bind(this)}></i>
-                            <i className="fa fa-fw fa-2x fa-chevron-right"></i>
+                            <i className="fa fa-fw fa-2x fa-chevron-right" onClick={this.playNext.bind(this)}></i>
                         </span>
                         <span className="play-mode">
                             <i className="fa fa-fw fa-2x fa-refresh"></i>

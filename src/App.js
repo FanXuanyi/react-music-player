@@ -6,6 +6,10 @@ import 'jplayer';
 import Player from "./page/Player";
 import { MUSIC_INFO } from './config/MusicInfo';
 import MusicList from './page/MusicList';
+import { Switch, Route, Router } from 'react-router-dom';
+import createBrowserHistory from "history/createBrowserHistory";
+
+const history = createBrowserHistory();
 
 class App extends Component {
 
@@ -31,14 +35,30 @@ class App extends Component {
     }
 
     render() {
+        const Home = () => (
+            <Player currentMusicItem={this.state.currentMusicItem}/>
+        );
+
+        const List = () => (
+            <MusicList {...this.state}/>
+        );
+
         return (
             <div>
                 <Header/>
-                <MusicList {...this.state}/>
-                <Player currentMusicItem={this.state.currentMusicItem}/>
+                {/*<MusicList {...this.state}/>*/}
+                {/*<Player currentMusicItem={this.state.currentMusicItem}/>*/}
+                <Router history={history}>
+                    <Switch>
+                        {/*<Route exact path='/' render={() => <Player currentMusicItem={this.state.currentMusicItem}/>}></Route>*/}
+                        {/*<Route path='/music-list' render={() => <MusicList {...this.state}/>}></Route>*/}
+                        <Route exact path='/' component={Home}></Route>
+                        <Route path='/music-list' component={List}></Route>
+                    </Switch>
+                </Router>
             </div>
         );
-  }
+    }
 }
 
 export default App;

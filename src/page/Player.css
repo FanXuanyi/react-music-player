@@ -3,9 +3,10 @@
     margin: 120px auto auto;
 }
 
-.player-caption {
+.player-caption a {
     font-size: 16px;
     color: rgb(47, 152, 66);
+    text-decoration: none;
 }
 
 .player-info {

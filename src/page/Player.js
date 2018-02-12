@@ -7,6 +7,7 @@ import 'jplayer';
 import './Player.css';
 import Progress from "../components/Progress";
 import 'font-awesome/css/font-awesome.css';
+import { Link } from 'react-router-dom';
 
 class Player extends Component {
     constructor(props) {
@@ -59,7 +60,9 @@ class Player extends Component {
     render() {
         return (
             <div className="player-page">
-                <h1 className="player-caption">我的私人音乐坊&nbsp;&gt;</h1>
+                <h1 className="player-caption">
+                    <Link to='/music-list'>我的私人音乐坊&nbsp;&gt;</Link>
+                </h1>
                 <div className="player-info">
                     <h2 className="music-title">{this.props.currentMusicItem.title}</h2>
                     <h3 className="music-artist">{this.props.currentMusicItem.artist}</h3>

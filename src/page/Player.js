@@ -18,7 +18,8 @@ class Player extends Component {
             duration: 0,//音频总时间
             barColor: '#2f9842',//进度条颜色
             volume: 0,//音量
-            isPlay: true//播放状态
+            isPlay: true,//播放状态
+            leftTime: 0//剩余时间
         };
     }
 
@@ -28,7 +29,8 @@ class Player extends Component {
             this.setState({
                 progress: e.jPlayer.status.currentPercentAbsolute,
                 duration: e.jPlayer.status.duration,
-                volume: e.jPlayer.options.volume * 100//音量是一个0到1的值
+                volume: e.jPlayer.options.volume * 100,//音量是一个0到1的值
+                leftTime: this.formatTime(e.jPlayer.status.duration * (1 - e.jPlayer.status.currentPercentAbsolute / 100))
             });
         });
     }
@@ -69,6 +71,15 @@ class Player extends Component {
         Pubsub.publish('PLAY_NEXT');
     }
 
+    // 时间格式化
+    formatTime(time) {
+        time = Math.floor(time);
+        let miniutes = Math.floor(time / 60);
+        let seconds = Math.floor(time % 60);
+        seconds = seconds < 10 ? `0${seconds}` : seconds;
+        return `${miniutes}:${seconds}`;
+    }
+
     render() {
         return (
             <div className="player-page">
@@ -79,7 +90,7 @@ class Player extends Component {
                     <h2 className="music-title">{this.props.currentMusicItem.title}</h2>
                     <h3 className="music-artist">{this.props.currentMusicItem.artist}</h3>
                     <div>
-                        <div className="left-time">-2:00</div>
+                        <div className="left-time">-{this.state.leftTime}</div>
                         <div className="volume-controller">
                             <i className="fa fa-fw fa-volume-up"></i>
                             <div className="volume-wrapper">

@@ -1,6 +1,12 @@
+完成效果如下：
+
+![播放器](https://github.com/FanXuanyi/react-music-player/blob/master/preview/player.png)
+
+![音乐列表](https://github.com/FanXuanyi/react-music-player/blob/master/preview/music-list.png)
+
 **1、使用create-react-app脚手架搭建React开发环境。**
 
-create-react-app（https://github.com/facebook/create-react-app）是来自于Facebook官方的零配置命令行工具，能够帮你自动创建基于Webpack+ES6的最简易的React项目模板。
+[create-react-app](https://github.com/facebook/create-react-app)是来自于Facebook官方的零配置命令行工具，能够帮你自动创建基于Webpack+ES6的最简易的React项目模板。
 
 安装如下：
 
@@ -48,9 +54,10 @@ npm start
 
 1）Player页面
 
-音乐播放器需要用到jPlayer（http://www.jplayer.cn/）插件。
+音乐播放器需要用到[jPlayer](http://www.jplayer.cn/)插件。
 
-在App.js文件中添加一个`<div id="player"></div>`作为jPlayer的容器。最开始以为是放在Player.js中，因为跳转到音乐列表页面时也需要播放音乐，所以将其放在App.js中。
+在App.js文件中添加一个`<div id="player"></div>`作为jPlayer的容器。
+最开始以为是放在Player.js中，因为跳转到音乐列表页面时也需要播放音乐，所以将其放在App.js中。
 
 2）MusicList页面
 

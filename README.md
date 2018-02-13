@@ -1,6 +1,10 @@
 完成效果如下：
 
+播放器页面：
+
 ![播放器](https://github.com/FanXuanyi/react-music-player/blob/master/preview/player.png)
+
+音乐列表页面：
 
 ![音乐列表](https://github.com/FanXuanyi/react-music-player/blob/master/preview/music-list.png)
 

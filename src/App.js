@@ -11,13 +11,20 @@ import Pubsub from 'pubsub-js';
 
 const history = createBrowserHistory();
 
+let modeList = [
+    'refresh',//表示循环
+    'arrows-h',//表示单曲
+    'random'//表示随机
+];//播放模式
+
 class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             currentMusicItem: MUSIC_INFO[0],
-            musicList: MUSIC_INFO
+            musicList: MUSIC_INFO,
+            playMode: 'refresh'//当前播放模式
         };
     }
 
@@ -49,6 +56,24 @@ class App extends Component {
         return this.state.musicList.indexOf(musicItem);
     }
 
+    // 当前音乐播放结束时判断播放模式
+    playWhenEnd() {
+        if (this.state.playMode === 'random') {
+            let index = this.findMusicIndex(this.state.currentMusicItem);
+            let randomIndex = index;
+            while (randomIndex === index) {
+                randomIndex = Math.floor(Math.random() * this.state.musicList.length);
+            }
+            this.playMusic(this.state.musicList[randomIndex]);
+        } else {
+            if (this.state.playMode === 'arrows-h') {
+                this.playMusic(this.state.currentMusicItem);
+            } else {
+                this.playSwitch('next');
+            }
+        }
+    }
+
     componentDidMount() {
         // 音乐播放初始化
         $('#player').jPlayer({
@@ -62,23 +87,35 @@ class App extends Component {
         });
         this.playMusic(this.state.currentMusicItem);
         $('#player').bind($.jPlayer.event.ended, (e) => {
-            this.playSwitch();
+            // this.playSwitch();
+            this.playWhenEnd();
         });
 
         Pubsub.subscribe('PLAY_MUSIC', (msg, musicItem) => {
             this.playMusic(musicItem);
         });
+
         Pubsub.subscribe('PLAY_PREV', (msg, musicItem) => {
             this.playSwitch('prev');
         });
+
         Pubsub.subscribe('PLAY_NEXT', (msg, musicItem) => {
             this.playSwitch('next');
         });
+
         Pubsub.subscribe('DELETE_MUSIC', (msg, musicItem) => {
             this.setState({
                 musicList: this.state.musicList.filter(item => {
                     return item !== musicItem;
                 })
+            });
+        });
+
+        Pubsub.subscribe('CHANGE_MODE', () => {
+            let index = modeList.indexOf(this.state.playMode);
+            index = (index + 1) % modeList.length;
+            this.setState({
+                playMode: modeList[index]
             });
         });
     }
@@ -89,16 +126,17 @@ class App extends Component {
         Pubsub.unsubscribe('PLAY_PREV');
         Pubsub.unsubscribe('PLAY_NEXT');
         Pubsub.unsubscribe('DELETE_MUSIC');
+        Pubsub.unsubscribe('CHANGE_MODE');
         $('#player').unbind($.jPlayer.event.ended);
     }
 
     render() {
         const Home = () => (
-            <Player currentMusicItem={this.state.currentMusicItem}/>
+            <Player currentMusicItem={this.state.currentMusicItem} playMode={this.state.playMode}/>
         );
 
         const List = () => (
-            <MusicList {...this.state}/>
+            <MusicList currentMusicItem={this.state.currentMusicItem} musicList={this.state.musicList}/>
         );
 
         return (

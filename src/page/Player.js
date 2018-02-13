@@ -80,6 +80,11 @@ class Player extends Component {
         return `${miniutes}:${seconds}`;
     }
 
+    // 切换播放模式
+    changeMode() {
+        Pubsub.publish('CHANGE_MODE');
+    }
+
     render() {
         return (
             <div className="player-page">
@@ -87,31 +92,38 @@ class Player extends Component {
                     <Link to='/music-list'>我的私人音乐坊&nbsp;&gt;</Link>
                 </h1>
                 <div className="player-info">
+                    {/*歌曲信息*/}
                     <h2 className="music-title">{this.props.currentMusicItem.title}</h2>
                     <h3 className="music-artist">{this.props.currentMusicItem.artist}</h3>
                     <div>
+                        {/*播放剩余时间*/}
                         <div className="left-time">-{this.state.leftTime}</div>
                         <div className="volume-controller">
                             <i className="fa fa-fw fa-volume-up"></i>
+                            {/*音量进度条*/}
                             <div className="volume-wrapper">
                                 <Progress progress={this.state.volume} barColor="#aaa" onProgressChange={this.changeVolumeHandler.bind(this)}/>
                             </div>
                         </div>
                     </div>
+                    {/*播放进度条*/}
                     <div className="play-progress">
                         <Progress {...this.state} onProgressChange={this.progressChangeHandler.bind(this)}/>
                     </div>
                     <div className="play-controller">
+                        {/*播放按钮：开始/暂停、上/下一首*/}
                         <span className="play-button">
                             <i className="fa fa-fw fa-2x fa-chevron-left" onClick={this.playPrev.bind(this)}></i>
                             <i className={`fa fa-fw fa-2x ${this.state.isPlay ? 'fa-pause' : 'fa-play'}`} onClick={this.play.bind(this)}></i>
                             <i className="fa fa-fw fa-2x fa-chevron-right" onClick={this.playNext.bind(this)}></i>
                         </span>
+                        {/*播放模式：循环、单曲、随机*/}
                         <span className="play-mode">
-                            <i className="fa fa-fw fa-2x fa-refresh"></i>
+                            <i className={`fa fa-fw fa-2x fa-${this.props.playMode}`} onClick={this.changeMode.bind(this)}></i>
                         </span>
                     </div>
                 </div>
+                {/*歌曲封面*/}
                 <div className="music-pic">
                     <img src={this.props.currentMusicItem.cover} alt={this.props.currentMusicItem.title}/>
                 </div>

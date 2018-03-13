@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import 'jplayer';
 import './Player.css';
-import Progress from "../components/Progress";
+import Progress from "../components/music/Progress";
 import 'font-awesome/css/font-awesome.css';
 import { Link } from 'react-router-dom';
 import Pubsub from 'pubsub-js';

@@ -2,7 +2,7 @@
  * Created by FXY on 2018/2/11.
  */
 import React, { Component } from 'react';
-import MusicListItem from '../components/MusicListItem';
+import MusicListItem from '../components/music/MusicListItem';
 import './MusicList.css';
 
 class MusicList extends Component {

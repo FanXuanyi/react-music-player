@@ -2,17 +2,17 @@
  * Created by FXY on 2018/3/13.
  */
 import React, { Component } from 'react';
-// import img from '../../images/1.jpg';
+import './ImgFigure.css';
 
 class ImgFigure extends Component {
     render() {
         let imagesData = this.props.imagesData;
         // console.log(imagesData.imageURL);
         return (
-            <figure>
+            <figure className="img-figure">
                 <img src={imagesData.imageURL} alt={imagesData.title}/>
                 <figcaption>
-                    <h2>{imagesData.title}</h2>
+                    <h2 className="img-title">{imagesData.title}</h2>
                 </figcaption>
             </figure>
         );

@@ -8,6 +8,8 @@ import MusicList from './page/MusicList';
 import { Switch, Route, Router } from 'react-router-dom';
 import createBrowserHistory from "history/createBrowserHistory";
 import Pubsub from 'pubsub-js';
+import { IMAGE_INFO } from './config/ImageInfo';
+import Picture from './page/Picture';
 
 const history = createBrowserHistory();
 
@@ -24,8 +26,20 @@ class App extends Component {
         this.state = {
             currentMusicItem: MUSIC_INFO[0],
             musicList: MUSIC_INFO,
-            playMode: 'refresh'//当前播放模式
-        };
+            playMode: 'refresh',//当前播放模式
+            imagesData: IMAGE_INFO
+        }
+    }
+
+    // 将图片名信息转成图片URL路径信息
+    getImageURL(imageDataArr) {
+        for (let i = 0; i < imageDataArr.length; i++) {
+            let singleImageData = imageDataArr[i];
+            singleImageData['imageURL'] = '../images/' + singleImageData.fileName;
+            console.log(singleImageData);
+            imageDataArr[i] = singleImageData;
+        }
+        return imageDataArr;
     }
 
     // 播放音乐
@@ -75,6 +89,14 @@ class App extends Component {
     }
 
     componentDidMount() {
+        // 添加图片的URL
+        this._isMounted = true;
+        if (this._isMounted) {
+            // this.state.imagesData = this.getImageURL(IMAGE_INFO);
+            this.setState({
+                imagesData: this.getImageURL(IMAGE_INFO)
+            });
+        }
         // 音乐播放初始化
         $('#player').jPlayer({
             // ready: function () {
@@ -128,6 +150,7 @@ class App extends Component {
         Pubsub.unsubscribe('DELETE_MUSIC');
         Pubsub.unsubscribe('CHANGE_MODE');
         $('#player').unbind($.jPlayer.event.ended);
+        this._isMounted = false;
     }
 
     render() {
@@ -139,9 +162,14 @@ class App extends Component {
             <MusicList currentMusicItem={this.state.currentMusicItem} musicList={this.state.musicList}/>
         );
 
+        const Pic = () => (
+            <Picture imagesData={this.state.imagesData}/>
+        );
+
         return (
             <div>
                 <Header/>
+                <Pic/>
                 <div id="player"></div>
                 {/*<MusicList {...this.state}/>*/}
                 {/*<Player currentMusicItem={this.state.currentMusicItem}/>*/}

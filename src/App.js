@@ -35,8 +35,9 @@ class App extends Component {
     getImageURL(imageDataArr) {
         for (let i = 0; i < imageDataArr.length; i++) {
             let singleImageData = imageDataArr[i];
-            singleImageData['imageURL'] = '../images/' + singleImageData.fileName;
-            console.log(singleImageData);
+            // console.log('./images/' + singleImageData.fileName);
+            singleImageData['imageURL'] = require('./images/' + singleImageData.fileName);
+            // console.log(singleImageData);
             imageDataArr[i] = singleImageData;
         }
         return imageDataArr;
@@ -97,6 +98,7 @@ class App extends Component {
                 imagesData: this.getImageURL(IMAGE_INFO)
             });
         }
+
         // 音乐播放初始化
         $('#player').jPlayer({
             // ready: function () {

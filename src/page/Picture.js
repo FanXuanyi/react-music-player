@@ -11,6 +11,11 @@ function getRangeRandom(low, high) {
     return Math.floor(Math.random() * (high - low) + low);
 }
 
+// 获取0-30°之间的一个任意正负值
+function get30DegRandom() {
+    return (Math.random() > 0.5 ? '' : '-') + Math.ceil((Math.random()) * 30);
+}
+
 class Picture extends Component {
     constructor(props) {
         super(props);
@@ -30,7 +35,6 @@ class Picture extends Component {
             }
         };
          this.state = {
-             arrange: '',
              imgArrangeArr: []
          };
     }
@@ -75,7 +79,8 @@ class Picture extends Component {
                 pos: {
                     top: getRangeRandom(vPosRangeTopY[0], vPosRangeTopY[1]),
                     left: getRangeRandom(vPosRangeX[0], vPosRangeX[1])
-                }
+                },
+                rotate: get30DegRandom()
             };
         });
 
@@ -94,7 +99,8 @@ class Picture extends Component {
                 pos: {
                     top: getRangeRandom(hPosRangeY[0], hPosRangeY[1]),
                     left: getRangeRandom(hPosRangeLORX[0], hPosRangeLORX[1])
-                }
+                },
+                rotate: get30DegRandom()
             };
         }
 
@@ -109,7 +115,7 @@ class Picture extends Component {
         this.setState({
             imgArrangeArr: imgArrangeArr
         });
-        console.log(imgArrangeArr);
+        // console.log(imgArrangeArr);
     }
 
     // 组件加载以后，为每张图片计算其位置的范围
@@ -165,10 +171,11 @@ class Picture extends Component {
                     pos: {
                         left: 0,
                         top: 0
-                    }
+                    },
+                    rotate: 0 // 居中图片不需要旋转
                 };
             }
-            return <ImgFigure key={item.id} ref={'imgFigure' + item.id} imagesData={item} arrange={this.state.imgArrangeArr[item.id]}/>
+            return <ImgFigure key={item.id} ref={'imgFigure' + item.id} imagesData={item} imgArrangeArr={this.state.imgArrangeArr[item.id]}/>
         });
 
         return (

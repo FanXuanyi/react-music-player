@@ -56,11 +56,14 @@ class Picture extends Component {
             topImgSpliceIndex; // 用来标记上侧区域图片是从数组中哪个位置拿出来的
 
         let imgArrangeCenterArr = imgArrangeArr.splice(centerIndex, 1); // 用来存储居中图片信息
+        // console.log(imgArrangeArr);
 
         // 居中centerIndex的图片
         imgArrangeCenterArr[0] = {
             pos: centerPos
         };
+        // console.log(centerPos);
+        // console.log(imgArrangeCenterArr);
 
         // 取出要布局上侧的图片状态信息
         topImgSpliceIndex = Math.floor(Math.random() * (imgArrangeArr.length - topImgNum));
@@ -98,10 +101,15 @@ class Picture extends Component {
         if (imgArrangeTopArr && imgArrangeTopArr[0]) {
             imgArrangeArr.splice(topImgSpliceIndex, 0, imgArrangeTopArr[0]);
         }
+        // console.log(imgArrangeArr);
+
+        imgArrangeArr.splice(centerIndex+1, 0, imgArrangeCenterArr[0]); // 图片id是从1开始的
+        // console.log(imgArrangeArr);
 
         this.setState({
             imgArrangeArr: imgArrangeArr
         });
+        console.log(imgArrangeArr);
     }
 
     // 组件加载以后，为每张图片计算其位置的范围
@@ -127,7 +135,7 @@ class Picture extends Component {
         // 计算中心图片的位置点
         this.constant.centerPos = {
             left: halfStageWidth - halfImgWidth,
-            top: halfStageHeight - halfImgHeight + 100
+            top: halfStageHeight - halfImgHeight
         };
 
         // 计算左侧和右侧区域图片排布位置的取值范围
@@ -141,8 +149,8 @@ class Picture extends Component {
         this.constant.hPosRange.y[1] = stageHeight - halfImgHeight * 3 + 100; // y的最大值
 
         // 计算上侧区域图片排布位置的取值范围
-        this.constant.vPosRange.topY[0] = 0 - halfImgHeight + 100; // 上侧区域y的最小值
-        this.constant.vPosRange.topY[1] = halfStageHeight - halfImgHeight * 3 + 100; // 上侧区域y的最大值
+        this.constant.vPosRange.topY[0] = 0 - halfImgHeight; // 上侧区域y的最小值
+        this.constant.vPosRange.topY[1] = halfStageHeight - halfImgHeight * 3; // 上侧区域y的最大值
 
         this.constant.vPosRange.x[0] = halfStageWidth - imgWidth; // 上侧区域x轴取的最小值
         this.constant.vPosRange.x[1] = halfStageWidth; // 上侧区域x轴取的最大值

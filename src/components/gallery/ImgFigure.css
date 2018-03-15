@@ -1,8 +1,9 @@
 .img-figure {
+    position: absolute;
     width: 320px;
     height: 360px;
     margin: 0;
-    padding: 40px;
+    padding: 30px;
     background: #fff;
     box-sizing: border-box;
 }

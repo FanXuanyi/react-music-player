@@ -10,6 +10,7 @@ import createBrowserHistory from "history/createBrowserHistory";
 import Pubsub from 'pubsub-js';
 import { IMAGE_INFO } from './config/ImageInfo';
 import Picture from './page/Picture';
+import './App.css';
 
 const history = createBrowserHistory();
 
@@ -171,7 +172,9 @@ class App extends Component {
         return (
             <div>
                 <Header/>
-                <Pic/>
+                <div className="picture-container">
+                    <Pic/>
+                </div>
                 <div id="player"></div>
                 {/*<MusicList {...this.state}/>*/}
                 {/*<Player currentMusicItem={this.state.currentMusicItem}/>*/}

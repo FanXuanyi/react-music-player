@@ -10,4 +10,5 @@
     height: 100%;
     overflow: hidden;
     background: #ddd;
+    perspective: 1800px;
 }

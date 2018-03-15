@@ -6,6 +6,23 @@ import './ImgFigure.css';
 
 class ImgFigure extends Component {
 
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    // imgFigure的点击处理函数
+    handleClick(e) {
+        if (this.props.imgArrangeArr.isCenter) {
+            this.props.inverse();
+        } else {
+            this.props.center();
+        }
+
+        e.stopPropagation();
+        e.preventDefault();
+    }
+
     render() {
         let imagesData = this.props.imagesData;
         // console.log(imagesData.imageURL);
@@ -13,7 +30,8 @@ class ImgFigure extends Component {
         let styleObj = {};
         // 如果props属性中指定了这张图片的位置，则使用
         if (this.props.imgArrangeArr) {
-            styleObj = this.props.imgArrangeArr.pos;
+            // styleObj = this.props.imgArrangeArr.pos;
+            styleObj=Object.assign(styleObj, this.props.imgArrangeArr.pos);
         }
 
         let rotate = this.props.imgArrangeArr.rotate;
@@ -28,11 +46,23 @@ class ImgFigure extends Component {
             });
         }
 
+        if (this.props.imgArrangeArr.isCenter) {
+            styleObj.zIndex = 11;
+        }
+
+        let imgFigureClassName = "img-figure";
+        imgFigureClassName += this.props.imgArrangeArr.isInverse ? ' is-inverse' : '';
+
         return (
-            <figure className="img-figure" style={styleObj}>
+            <figure className={imgFigureClassName} style={styleObj} onClick={this.handleClick}>
                 <img src={imagesData.imageURL} alt={imagesData.title}/>
                 <figcaption>
                     <h2 className="img-title">{imagesData.title}</h2>
+                    <div className="img-back" onClick={this.handleClick}>
+                        <p>
+                            {this.props.imagesData.desc}
+                        </p>
+                    </div>
                 </figcaption>
             </figure>
         );

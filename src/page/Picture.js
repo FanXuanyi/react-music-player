@@ -35,8 +35,34 @@ class Picture extends Component {
             }
         };
          this.state = {
-             imgArrangeArr: []
+             imgArrangeArr: [
+                 // {
+                 //     pos: {
+                 //         left: '0',
+                 //         top: '0'
+                 //     },
+                 //     rotate: 0, // 旋转角度
+                 //     isInverse: false, // 图片正反面
+                 //     isCenter: false // 图片是否居中
+                 // }
+             ]
          };
+    }
+
+    /*
+     * 翻转图片
+     * @param index 输入当前被执行inverse操作的图片对应的图片信息数组的index数组
+     * @return {Function} 这是一个闭包函数，其内return一个真正待执行的函数
+     */
+    inverse(index) {
+        return function() {
+            let imgArrangeArr = this.state.imgArrangeArr;
+            imgArrangeArr[index].isInverse = !imgArrangeArr[index].isInverse;
+
+            this.setState({
+                imgArrangeArr: imgArrangeArr
+            });
+        }.bind(this);
     }
 
     /*
@@ -64,7 +90,9 @@ class Picture extends Component {
 
         // 居中centerIndex的图片
         imgArrangeCenterArr[0] = {
-            pos: centerPos
+            pos: centerPos,
+            rotate: 0,
+            isCenter: true
         };
         // console.log(centerPos);
         // console.log(imgArrangeCenterArr);
@@ -80,7 +108,8 @@ class Picture extends Component {
                     top: getRangeRandom(vPosRangeTopY[0], vPosRangeTopY[1]),
                     left: getRangeRandom(vPosRangeX[0], vPosRangeX[1])
                 },
-                rotate: get30DegRandom()
+                rotate: get30DegRandom(),
+                isCenter: false
             };
         });
 
@@ -100,7 +129,8 @@ class Picture extends Component {
                     top: getRangeRandom(hPosRangeY[0], hPosRangeY[1]),
                     left: getRangeRandom(hPosRangeLORX[0], hPosRangeLORX[1])
                 },
-                rotate: get30DegRandom()
+                rotate: get30DegRandom(),
+                isCenter: false
             };
         }
 
@@ -116,6 +146,17 @@ class Picture extends Component {
             imgArrangeArr: imgArrangeArr
         });
         // console.log(imgArrangeArr);
+    }
+
+    /*
+     * 利用rearrange函数，居中对应index的图片
+     * @param index 需要被居中的图片对应的图片信息数组的index数组
+     * @return {Function}
+     */
+    center(index) {
+        return function () {
+            this.rearrange(index-1);
+        }.bind(this);
     }
 
     // 组件加载以后，为每张图片计算其位置的范围
@@ -172,10 +213,14 @@ class Picture extends Component {
                         left: 0,
                         top: 0
                     },
-                    rotate: 0 // 居中图片不需要旋转
+                    rotate: 0, // 居中图片不需要旋转
+                    isInverse: false,
+                    isCenter: false
                 };
             }
-            return <ImgFigure key={item.id} ref={'imgFigure' + item.id} imagesData={item} imgArrangeArr={this.state.imgArrangeArr[item.id]}/>
+            return <ImgFigure key={item.id} ref={'imgFigure' + item.id}
+                              imagesData={item} imgArrangeArr={this.state.imgArrangeArr[item.id]}
+                              inverse={this.inverse(item.id)} center={this.center(item.id).bind(this)}/>
         });
 
         return (

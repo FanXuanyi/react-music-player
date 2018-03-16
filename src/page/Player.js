@@ -39,22 +39,28 @@ class Player extends Component {
         $('#player').unbind($.jPlayer.event.timeupdate);
     }
 
+    // 进度条被拖动的处理方法
     progressChangeHandler(progress) {
         // console.log('from root widget', progress);
         //做一个判断是为了解决音乐暂停时，点击进度条，音乐会跳转到对应时间但按isPlay状态没有改变的bug
         $('#player').jPlayer(this.state.isPlay ? 'play' : 'pause', this.state.duration * progress);
     }
 
+    // 音量条被拖动的处理方法
     changeVolumeHandler(progress) {
         $('#player').jPlayer('volume', progress);
     }
 
     // 播放/暂停
     play() {
+        // 获取转圈的封面图片
+        let imgAnimation = this.refs.imgAnimation;
         if (this.state.isPlay) {
             $('#player').jPlayer('pause');
+            imgAnimation.style = 'animation-play-state: paused';
         } else {
             $('#player').jPlayer('play');
+            imgAnimation.style = 'animation-play-state: running';
         }
         this.setState({
             isPlay: !this.state.isPlay
@@ -125,7 +131,7 @@ class Player extends Component {
                 </div>
                 {/*歌曲封面*/}
                 <div className="music-pic">
-                    <img src={this.props.currentMusicItem.cover} alt={this.props.currentMusicItem.title}/>
+                    <img ref="imgAnimation" src={this.props.currentMusicItem.cover} alt={this.props.currentMusicItem.title}/>
                 </div>
             </div>
         );

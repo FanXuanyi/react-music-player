@@ -99,4 +99,15 @@
     width: 180px;
     height: 180px;
     border-radius: 50%;
+    animation: rotate 20s infinite linear; /*图片旋转动画*/
+}
+
+/*设置动画*/
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }

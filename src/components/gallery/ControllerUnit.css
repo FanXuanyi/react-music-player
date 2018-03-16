@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../../fonts/icons/iconfont.eot');
+    src: url('../../fonts/icons/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/icons/iconfont.woff') format('woff'),
+    url('../../fonts/icons/iconfont.ttf') format('truetype'),
+    url('../../fonts/icons/iconfont.svg#iconfont') format('svg');
+}
+
+.controller-unit {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background: #aaa;
+    border-radius: 50%;
+    transform: scale(.5);
+    transition: transform .6s ease-in-out, background-color .3s;
+}
+
+.is-center {
+    transform: scale(1);
+    background: #888;
+}
+
+.is-center::after {
+    font-family: "iconfont";
+    content: '\e600';
+    color: #fff;
+    line-height: 30px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 80%;
+}
+
+.is-center.is-inverse {
+    background: #555;
+    transform: rotateY(180deg);
+}

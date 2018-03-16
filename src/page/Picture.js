@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import ImgFigure from "../components/gallery/ImgFigure";
 import './Picture.css';
 import ReactDOM from 'react-dom';
+import ControllerUnit from '../components/gallery/ControllerUnit';
 
 // 获取区间内的一个随机值
 function getRangeRandom(low, high) {
@@ -223,12 +224,19 @@ class Picture extends Component {
                               inverse={this.inverse(item.id)} center={this.center(item.id).bind(this)}/>
         });
 
+        let controllerUnits = this.props.imagesData.map(item => {
+            return <ControllerUnit key={item.id} imgArrangeArr={this.state.imgArrangeArr[item.id]}
+                                   inverse={this.inverse(item.id)} center={this.center(item.id).bind(this)}/>
+        });
+
         return (
             <div className="stage" ref="stage">
                 <div className="img-sec">
                     {imgFigures}
                 </div>
-                {/*<nav>{controllerUnits}</nav>*/}
+                <nav className="controller-nav">
+                    {controllerUnits}
+                </nav>
             </div>
         );
     }

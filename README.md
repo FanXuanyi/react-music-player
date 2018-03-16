@@ -1,12 +1,20 @@
 完成效果如下：
 
-播放器页面：
+播放器：
 
 ![播放器](https://github.com/FanXuanyi/react-music-player/blob/master/preview/player.png)
 
-音乐列表页面：
+音乐列表：
 
 ![音乐列表](https://github.com/FanXuanyi/react-music-player/blob/master/preview/music-list.png)
+
+图片画廊：
+
+![图片画廊](https://github.com/FanXuanyi/react-music-player/blob/master/preview/gallery.png)
+
+点击画廊的中间图片会翻转：
+
+![中间图片翻转](https://github.com/FanXuanyi/react-music-player/blob/master/preview/gallery_click_inverse.png)
 
 **1、使用create-react-app脚手架搭建React开发环境。**
 
@@ -34,6 +42,29 @@ npm start
 
 **2、组件**
 
+组件是React的基石，所有的React应用程序都是基于组件的。
+举个例子，以ES6的形式来创建React组件，代码如下：
+
+```
+import React, { Component } from 'react';
+
+class List extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0,
+            items: ['吃饭', '睡觉', '打豆豆']
+        };
+    }
+
+    render() {
+        return (...);
+    }
+}
+
+export default List;
+```
+
 由于React组件化的思想，我们将页面中的各模块进行分割并形成组件。
 
 在src目录下新建一个空的文件夹components，用来放一些基本组件，具体组件如下：
@@ -50,11 +81,21 @@ npm start
 
 这一个组件显示的是歌曲列表中的一列。
 
+4）ImgFigure组件
+
+这个组件显示的是画廊中的每一张图片。
+
+5）ControllerUnit组件
+
+这是图片对应的控制组件。
+
 **3、页面**
 
-主要包含两个页面：一个是音乐播放器页面（Player），一个是音乐列表页面（MusicList）。
+主要包含三个页面：一个是音乐播放器页面（Player），一个是音乐列表页面（MusicList），以及一个图片画廊页面（Picture）。
 
-在src目录下新建一个空的文件夹page，用来放这两个页面。
+*但是在这里我没有将将图片画廊部分作为单独一个页面，而是放在了音乐播放的上面。*
+
+在src目录下新建一个空的文件夹page，用来放这三个页面。
 
 1）Player页面
 
@@ -67,6 +108,10 @@ npm start
 
 以列表的形式显示全部歌曲信息。
 
+3）Picture页面
+
+图片画廊的显示。
+
 **4、路由**
 
 React Router被拆分为三个包：react-router、react-router-dom和react-router-native。
@@ -78,6 +123,13 @@ react-router提供核心的路由组件与函数，其余两个则提供运行�
 npm install react-router-dom --save
 ```
 
-特别注意的是，执行上述命令装的是最新版本，当前是4.2，该版本与2.0版本相差很大。
+**特别注意的是，执行上述命令装的是最新版本，当前是4.2，该版本与2.0版本相差很大。**
 
 **5、组件通信**
+
+- 父组件向子组件通信：props
+- 子组件向父组件通信：回调函数/自定义事件
+- 跨级组件通信：层层组件传递props/context
+- 没有嵌套关系组件之间的通信：自定义事件
+
+*在这里，我们使用的是通过props让父组件向子组件通信。*

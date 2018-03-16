@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf03e29d-b2e1-4228-8a30-6bd4926954e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/icons/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/icons/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/icons/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/icons/iconfont.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/Picture.css" afterPath="$PROJECT_DIR$/src/page/Picture.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/Picture.js" afterPath="$PROJECT_DIR$/src/page/Picture.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/gallery/ImgFigure.js" afterPath="$PROJECT_DIR$/src/components/gallery/ImgFigure.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,8 +69,8 @@
       <file leaf-file-name="Picture.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/Picture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="227" column="62" lean-forward="false" selection-start-line="227" selection-start-column="49" selection-end-line="227" selection-end-column="62" />
+            <state relative-caret-position="-54">
+              <caret line="228" column="43" lean-forward="false" selection-start-line="228" selection-start-column="43" selection-end-line="228" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#40#81#0" expanded="true" />
@@ -123,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImgFigure.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImgFigure.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/gallery/ImgFigure.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="63" column="43" lean-forward="false" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#40#81#0" expanded="true" />
@@ -136,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImgFigure.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImgFigure.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/gallery/ImgFigure.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="33">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -165,12 +160,12 @@
         <option value="$PROJECT_DIR$/src/config/ImageInfo.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/components/gallery/ImgFigure.js" />
-        <option value="$PROJECT_DIR$/src/components/gallery/ImgFigure.css" />
         <option value="$PROJECT_DIR$/src/page/Picture.css" />
         <option value="$PROJECT_DIR$/src/components/gallery/ControllerUnit.css" />
         <option value="$PROJECT_DIR$/src/page/Picture.js" />
         <option value="$PROJECT_DIR$/src/components/gallery/ControllerUnit.js" />
+        <option value="$PROJECT_DIR$/src/components/gallery/ImgFigure.css" />
+        <option value="$PROJECT_DIR$/src/components/gallery/ImgFigure.js" />
       </list>
     </option>
   </component>
@@ -186,8 +181,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="524" />
-    <option name="y" value="33" />
+    <option name="x" value="44" />
+    <option name="y" value="55" />
     <option name="width" value="1319" />
     <option name="height" value="749" />
   </component>
@@ -445,12 +440,12 @@
       <workItem from="1521009467125" duration="19039000" />
       <workItem from="1521075498155" duration="16779000" />
       <workItem from="1521118249286" duration="4175000" />
-      <workItem from="1521161769274" duration="1323000" />
+      <workItem from="1521161769274" duration="2656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41316000" />
+    <option name="totallyTimeSpent" value="42649000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,7 +457,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="524" y="33" width="1319" height="749" extended-state="0" />
+    <frame x="44" y="55" width="1319" height="749" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24043716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -814,35 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Picture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="227" column="62" lean-forward="false" selection-start-line="227" selection-start-column="49" selection-end-line="227" selection-end-column="62" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#40#81#0" expanded="true" />
-            <element signature="n#!!block;n#getRangeRandom#0" expanded="false" />
-            <element signature="n#!!block;n#get30DegRandom#0" expanded="false" />
-            <element signature="e#615#982#0" expanded="false" />
-            <element signature="e#1036#1374#0" expanded="false" />
-            <element signature="n#!!block;n#inverse#0;n#Picture#0" expanded="false" />
-            <element signature="n#!!block;n#rearrange#0;n#Picture#0" expanded="false" />
-            <element signature="n#!!block;n#center#0;n#Picture#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/gallery/ImgFigure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#40#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/gallery/ControllerUnit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -869,11 +835,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Picture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="228" column="43" lean-forward="false" selection-start-line="228" selection-start-column="43" selection-end-line="228" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#40#81#0" expanded="true" />
+            <element signature="n#!!block;n#getRangeRandom#0" expanded="false" />
+            <element signature="n#!!block;n#get30DegRandom#0" expanded="false" />
+            <element signature="e#615#982#0" expanded="false" />
+            <element signature="e#1036#1374#0" expanded="false" />
+            <element signature="n#!!block;n#inverse#0;n#Picture#0" expanded="false" />
+            <element signature="n#!!block;n#rearrange#0;n#Picture#0" expanded="false" />
+            <element signature="n#!!block;n#center#0;n#Picture#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/gallery/ImgFigure.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="33">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/gallery/ImgFigure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="63" column="43" lean-forward="false" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#40#81#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

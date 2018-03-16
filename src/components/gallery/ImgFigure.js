@@ -58,12 +58,12 @@ class ImgFigure extends Component {
                 <img src={imagesData.imageURL} alt={imagesData.title}/>
                 <figcaption>
                     <h2 className="img-title">{imagesData.title}</h2>
-                    <div className="img-back" onClick={this.handleClick}>
-                        <p>
-                            {this.props.imagesData.desc}
-                        </p>
-                    </div>
                 </figcaption>
+                <div className="img-back" onClick={this.handleClick}>
+                    <p>
+                        {this.props.imagesData.desc}
+                    </p>
+                </div>
             </figure>
         );
     }

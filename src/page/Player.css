@@ -33,12 +33,14 @@
     color: #999;
     font-weight: 400;
     width: 40px;
+    display: inline-block;
 }
 
 .volume-controller {
     position: relative;
-    left: 20px;
-    top: -3px;
+    /*left: 20px;*/
+    /*top: -3px;*/
+    display: inline-block;
 }
 
 .volume-controller .fa {

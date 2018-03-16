@@ -175,17 +175,19 @@ class App extends Component {
                 <div className="picture-container">
                     <Pic/>
                 </div>
-                <div id="player"></div>
-                {/*<MusicList {...this.state}/>*/}
-                {/*<Player currentMusicItem={this.state.currentMusicItem}/>*/}
-                <Router history={history}>
-                    <Switch>
-                        {/*<Route exact path='/' render={() => <Player currentMusicItem={this.state.currentMusicItem}/>}></Route>*/}
-                        {/*<Route path='/music-list' render={() => <MusicList {...this.state}/>}></Route>*/}
-                        <Route exact path='/' component={Home}></Route>
-                        <Route path='/music-list' component={List}></Route>
-                    </Switch>
-                </Router>
+                <div className="music-container">
+                    <div id="player"></div>
+                    {/*<MusicList {...this.state}/>*/}
+                    {/*<Player currentMusicItem={this.state.currentMusicItem}/>*/}
+                    <Router history={history}>
+                        <Switch>
+                            {/*<Route exact path='/' render={() => <Player currentMusicItem={this.state.currentMusicItem}/>}></Route>*/}
+                            {/*<Route path='/music-list' render={() => <MusicList {...this.state}/>}></Route>*/}
+                            <Route exact path='/' component={Home}></Route>
+                            <Route path='/music-list' component={List}></Route>
+                        </Switch>
+                    </Router>
+                </div>
             </div>
         );
     }

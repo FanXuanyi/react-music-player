@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf03e29d-b2e1-4228-8a30-6bd4926954e2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/preview/music-list.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/preview/player.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/Player.css" afterPath="$PROJECT_DIR$/src/page/Player.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/Player.js" afterPath="$PROJECT_DIR$/src/page/Player.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,21 +48,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Player.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page/Player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="131" column="26" lean-forward="true" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
+            <state relative-caret-position="270">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/Player.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="110" column="33" lean-forward="false" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
+            <state relative-caret-position="1275">
+              <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="400" />
-    <option name="y" value="32" />
+    <option name="x" value="248" />
+    <option name="y" value="5" />
     <option name="width" value="1319" />
     <option name="height" value="749" />
   </component>
@@ -277,6 +277,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-music-player" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-music-player" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="preview" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -294,6 +308,9 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\software\WebStorm\Prj\react-music-player\preview" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\software\WebStorm\Prj\react-music-player\src\fonts\icons" />
     </key>
@@ -391,12 +408,12 @@
       <workItem from="1521009467125" duration="19039000" />
       <workItem from="1521075498155" duration="16779000" />
       <workItem from="1521118249286" duration="4175000" />
-      <workItem from="1521161769274" duration="5470000" />
+      <workItem from="1521161769274" duration="6075000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45463000" />
+    <option name="totallyTimeSpent" value="46068000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,17 +425,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="400" y="32" width="1319" height="749" extended-state="0" />
-    <editor active="true" />
+    <frame x="248" y="5" width="1319" height="749" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24043716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24043716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3792517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3792517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -834,18 +850,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Player.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Player.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="131" column="26" lean-forward="true" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
+        <state relative-caret-position="1275">
+          <caret line="109" column="10" lean-forward="true" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Player.css">
+    <entry file="file://$PROJECT_DIR$/preview/music-list.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="110" column="33" lean-forward="false" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
+        <state relative-caret-position="270">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding />
         </state>
       </provider>

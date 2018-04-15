@@ -17,6 +17,11 @@
     transform: translate(320px) rotateY(180deg);
 }
 
+img {
+    width: 260px;
+    height: 260px;
+}
+
 figcaption {
     text-align: center;
 }
